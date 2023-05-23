@@ -1,0 +1,30 @@
+<div>
+    <form [formGroup]="formdata">
+        <div style="margin-top: 20px;"> 
+            <label style="width:150px;">First Name</label>
+            <input type="text" style="margin-left: 20px;" placeholder="First Name" formControlName="firstName">
+        </div>
+        <div style="margin-top: 20px;">
+            <label style="width:150px;">Last Name</label>
+            <input type="text" style="margin-left: 20px;" placeholder="Last Name" formControlName="lastName">
+        </div>
+       
+        <div style="margin-top: 20px;" class="d-flex">
+            <label style="width:150px;" >Supervisor</label>
+            <ng-select style="color:blue" bindLabel="firstName" bindValue="identificationNumber" [items]="sortedList"
+               [closeOnSelect]="true" formControlName="supervisor" style="width:150px;" >
+            </ng-select>
+          </div>
+
+        <div style="margin-top: 20px;">
+            <label style="width:150px;">Email</label>
+            <input  type="email" style="margin-left: 20px;" placeholder="Email" formControlName="email" email="true">
+        </div>
+        <div style="margin-top: 20px;">
+            <label style="width:150px;">Phone Number</label>
+            <input type="text" style="margin-left: 20px;" placeholder="Phone Number" formControlName="phoneNumber">
+        </div>
+        <button [disabled]="!formdata.valid" (click)="onClickSubmit()">Submit</button>
+        <br />
+    </form>
+</div>
