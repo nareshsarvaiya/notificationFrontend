@@ -1,4 +1,5 @@
 # notificationFrontend
+First git clone
 
 import project in VScode and npm install
 
